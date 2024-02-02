@@ -1,0 +1,129 @@
+@use'base/variables' as v;
+@use'base/mixins' as m;
+
+.header{
+
+    background-image: linear-gradient(to right, transparentize(v.$primario, .2) 0%, transparentize(v.$primario,.2) 100%) , url(../img/header_bg.jpg);
+    background-attachment:  fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 3rem 0;
+    position: relative;
+    @include m.tablet { 
+        padding-bottom: 20rem;
+     }
+
+    &__barra{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        
+      @include m.tablet { 
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+       }
+
+    }
+    
+    &__logo{
+        width: 25rem;
+    }
+
+
+
+    &__contenido{
+
+        @include m.tablet {
+            margin-top: 10rem; 
+            max-width: 50rem;
+         }
+
+
+
+    }
+
+
+    &__heading{
+       margin-top: 5rem;
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet { 
+            text-align: left;
+         }
+
+    }
+
+
+    &__texto{
+        color: v.$blanco;
+        display: none;
+        @include m.tablet { 
+            display: block;
+         }
+
+    }
+
+    &__imagen{
+        display: none;
+        @include m.tablet { 
+            display: block;
+            max-width: 40rem;
+            position: absolute;
+            right: 0;
+            bottom: -5rem;
+            border-bottom-left-radius: 5rem;
+            border-top-left-radius: 2rem;
+          
+
+         }
+
+         @include m.desktopXL{
+            max-width: 60rem;
+         }
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*Navegacion--------------------------
+
+.navegacion{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include m.tablet { 
+        flex-direction: row;
+        gap: 2.5rem;
+     }
+
+
+    &__link{
+        text-align: center;
+        font-weight: 700;
+        color: v.$blanco;
+        font-size: 1.8rem;
+
+    }
+}
